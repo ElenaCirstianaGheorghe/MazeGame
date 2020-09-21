@@ -198,9 +198,9 @@ def TimeIsUp():
     global my_timer, points
     if (my_timer == 0):
         print(f"TIME IS UP!\n\nFINAL SCORE: {points}")
-        with open("D:/Work/PROJECTS/Jocuri/Labirint/Score.txt", "a") as scorefile:
+        with open("Score.txt", "a") as scorefile: #don't forget to write the path for the directory where the Score file is stored 
             scorefile.write(f" {str(max_value)}")
-        with open("D:/Work/PROJECTS/Jocuri/Labirint/Score.txt", "r") as scorefile2:
+        with open("Score.txt", "r") as scorefile2: #don't forget to write the path for the directory where the Score file is stored 
             score_read = scorefile2.read()
             list_score = score_read.split()
             list_score = [int(elem) for elem in list_score]
@@ -217,9 +217,9 @@ def FinalLevel():
     if my_timer < 0 and points == 2800:
         clear()
         print(f"YOU HAVE WON!\n\nFINAL SCORE: {points}")
-        with open("D:/Work/PROJECTS/Jocuri/Labirint/Score.txt", "a") as scorefile:
+        with open("Score.txt", "a") as scorefile: #don't forget to write the path for the directory where the Score file is stored 
             scorefile.write(f" {str(max_value)}")
-        with open("D:/Work/PROJECTS/Jocuri/Labirint/Score.txt", "r") as scorefile2:
+        with open("Score.txt", "r") as scorefile2: #don't forget to write the path for the directory where the Score file is stored 
             score_read = scorefile2.read()
             list_score = score_read.split()
             list_score = [int(elem) for elem in list_score]
