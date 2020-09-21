@@ -1,2 +1,2 @@
 # MazeGame
-It's a fun 7 level maze game build in Python. 
+It's a fun maze game build in Python using text files for the levels' pattern.
