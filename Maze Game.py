@@ -259,5 +259,6 @@ for i in range(7):
     sleep(3)
     clear()
 
-    points_level += 100
+    # points_level and time_level increase when a level is completed 
+    points_level += 100 
     time_level += 10
