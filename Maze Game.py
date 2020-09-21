@@ -7,16 +7,12 @@ import threading
 import random
 
 def clear():
-    '''
-    It clears the screen.
-    '''
+    ''' It clears the screen.'''
 
     os.system('cls')
 
 def RemainingTime():
-    '''
-    It displays the time left until the begining of the game.
-    '''
+    ''' It displays the time left until the begining of the game.'''
 
     print(f"Level {level} starts in: \n")
     for remaining in range(3, 0, -1):
@@ -27,10 +23,8 @@ def RemainingTime():
     clear()
 
 def Countdown():
-    '''
-    It initializes a timer for the player to check the time left for the
-    current level.
-    '''
+    ''' It initializes a timer for the player to check the time left for the
+    current level.'''
 
     global my_timer
     my_timer = time_level
@@ -39,10 +33,8 @@ def Countdown():
         sleep(1)
 
 def InitMatrix():
-    '''
-    It initializes the board game (matrix) that includes the level elements from
-    the adequate text file.
-    '''
+    '''It initializes the board game (matrix) that includes the level elements from
+    the adequate text file.'''
 
     elem_list = []
     for line in level_read:
@@ -63,9 +55,7 @@ def InitMatrix():
     return m
 
 def ShowMatrix():
-    '''
-    It displays the matrix.
-    '''
+    '''It displays the matrix.'''
 
     for i in range(24):
         for j in range(24):
@@ -80,9 +70,7 @@ def ShowMatrix():
         print("")
 
 def FindPlayer():
-    '''
-    It finds the player (digit 6) and returns its position.
-    '''
+    ''' It finds the player (digit 6) and returns its position.'''
 
     for i in range(24):
         for j in range(24):
@@ -94,9 +82,7 @@ def FindPlayer():
     return lin, col
 
 def FindExit():
-    '''
-    It finds the maze exit point (digit 0) and returns its position.
-    '''
+    ''' It finds the maze exit point (digit 0) and returns its position.'''
 
     for i in range(24):
         for j in range(24):
@@ -108,9 +94,7 @@ def FindExit():
     return final_lin, final_col
 
 def MoveLeft():
-    '''
-    It moves the "@" element to the left when left key is pressed.
-    '''
+    ''' It moves the "@" element to the left when left key is pressed.'''
 
     global col
     if ((col-1) != -1) and (m[lin][col-1] != 1):
@@ -119,9 +103,7 @@ def MoveLeft():
         col -= 1
 
 def MoveRight():
-    '''
-    It moves the "@" element to the right when right key is pressed.
-    '''
+    ''' It moves the "@" element to the right when right key is pressed.'''
 
     global col
     if ((col + 1) != 24) and (m[lin][col+1] != 1):
@@ -130,9 +112,7 @@ def MoveRight():
         col += 1
 
 def MoveUp():
-    '''
-    It moves the "@" element to the upper side when up key is pressed.
-    '''
+    ''' It moves the "@" element to the upper side when up key is pressed.'''
 
     global lin
     if ((lin - 1) != -1) and (m[lin-1][col] != 1):
@@ -141,9 +121,7 @@ def MoveUp():
         lin -= 1
 
 def MoveDown():
-    '''
-    It moves the "@" element to the bottom when left dowm is pressed.
-    '''
+    ''' It moves the "@" element to the bottom when left dowm is pressed.'''
 
     global lin
     if ((lin + 1) != 24) and (m[lin+1][col] != 1):
@@ -152,10 +130,8 @@ def MoveDown():
         lin += 1
 
 def PlayMaze():
-    '''
-    It reads the keys that are pressed and executes the specific function and if
-    the player reaches the exit point displays the level completed message.
-    '''
+    ''' It reads the keys that are pressed and executes the specific function and if
+    the player reaches the exit point displays the level completed message.'''
 
     global my_timer, points, points_level, y, z
 
@@ -190,10 +166,8 @@ def PlayMaze():
             print(f"LEVEL COMPLETED!\n\nSCORE:{points}")
 
 def TimeIsUp():
-    '''
-    If the time expires, the game ends, the score is saved in a text file and
-    the high score from the text file is displayed on the screen.
-    '''
+    ''' If the time expires, the game ends, the score is saved in a text file and
+    the high score from the text file is displayed on the screen.'''
 
     global my_timer, points
     if (my_timer == 0):
@@ -208,10 +182,8 @@ def TimeIsUp():
         quit()
 
 def FinalLevel():
-    '''
-    It displays a congratulation massage if the player accomplishes the last level,
-    saves the score in a text file and shows the high score from the text file.
-    '''
+    ''' It displays a congratulation massage if the player accomplishes the last level,
+    saves the score in a text file and shows the high score from the text file.'''
 
     global my_timer, points
     if my_timer < 0 and points == 2800:
