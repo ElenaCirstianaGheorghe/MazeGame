@@ -59,14 +59,14 @@ def ShowMatrix():
 
     for i in range(24):
         for j in range(24):
-            if m[i][j] == 0:
-                print(" ", end = " ")
-            elif m[i][j] == 1:
+            if m[i][j] == 0: #blank space
+                print(" ", end = " ") 
+            elif m[i][j] == 1: #boarder
                 print("=", end = " ")
-            elif m[i][j] == 9:
+            elif m[i][j] == 9: #exit point
                 print(" ", end = " ")
             else:
-                print("@", end = " ")
+                print("@", end = " ") #player
         print("")
 
 def FindPlayer():
@@ -210,7 +210,7 @@ for i in range(7):
 
     level = i + 1
 
-    with open(f"D:/Work/PROJECTS/Jocuri/Labirint/Level {str(level)}.txt", "r") as level_file:
+    with open(f"Level {str(level)}.txt", "r") as level_file: #don't forget to write the path of the directory where the Level file is stored 
         level_read = level_file.readlines()
 
     m = InitMatrix()
