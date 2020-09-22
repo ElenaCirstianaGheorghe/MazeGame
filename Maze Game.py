@@ -4,7 +4,7 @@ import time
 import sys
 from time import *
 import threading
-import random
+
 
 def clear():
     ''' It clears the screen.'''
