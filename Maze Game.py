@@ -135,7 +135,7 @@ def PlayMaze():
 
     global my_timer, points, points_level, y, z
 
-    while my_timer >= 0:
+    while my_timer > 0:
 
         clear()
         ShowMatrix()
@@ -173,7 +173,7 @@ def TimeIsUp():
     if (my_timer == 0):
         print(f"TIME IS UP!\n\nFINAL SCORE: {points}")
         with open("Score.txt", "a") as scorefile: #don't forget to write the path for the directory where the Score file is stored 
-            scorefile.write(f" {str(max_value)}")
+            scorefile.write(f" {str(points)}")
         with open("Score.txt", "r") as scorefile2: #don't forget to write the path for the directory where the Score file is stored 
             score_read = scorefile2.read()
             list_score = score_read.split()
@@ -186,11 +186,11 @@ def FinalLevel():
     saves the score in a text file and shows the high score from the text file.'''
 
     global my_timer, points
-    if my_timer < 0 and points == 2800:
+    if points == 2800:
         clear()
         print(f"YOU HAVE WON!\n\nFINAL SCORE: {points}")
         with open("Score.txt", "a") as scorefile: #don't forget to write the path for the directory where the Score file is stored 
-            scorefile.write(f" {str(max_value)}")
+            scorefile.write(f" {str(points)}")
         with open("Score.txt", "r") as scorefile2: #don't forget to write the path for the directory where the Score file is stored 
             score_read = scorefile2.read()
             list_score = score_read.split()
